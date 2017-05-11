@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Helmet} from "react-helmet";
 import './App.css';
-import Index from './pages/Index';
+import Header from './components/Header';
 import Projects from './pages/Projects';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
     render() {
@@ -13,9 +13,10 @@ class App extends Component {
                     <Helmet title="Quentin Beauperin" meta={[
                         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
                     ]} />
-                    <Link to="/" className="header">quentin beauperin</Link>
+                    <Route path="/" children={({ match }) => (
+                        <Header home={match}/>
+                    )}/>
                     <main>
-                        <Route exact path="/" component={Index}/>
                         <Route path="/projects" component={Projects}/>
                     </main>
                 </div>
