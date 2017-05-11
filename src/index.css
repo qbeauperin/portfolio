@@ -96,26 +96,27 @@ main {
 .projects {
     overflow: hidden;
     width: 100%;
-    padding: 20px;
+    padding: 30px;
 }
     .projects .project {
         float: left;
         width: 25%;
-        padding: 20px;
+        padding: 10px;
         opacity: 1;
         left: 0;
         top: 0;
-        transition: opacity .8s .4s, top .8s .4s, left .8s .4s;
+        transform: scale(1);
+        transition: opacity .4s .4s, transform .4s .4s;
     }
+    .projects .project.grid-appear,
     .projects .project.grid-enter {
         opacity: 0;
-        left: 40px;
-        top: 40px;
+        transform: scale(0.8);
     }
+    .projects .project.grid-appear-active,
     .projects .project.grid-enter-active {
         opacity: 1;
-        left: 0;
-        top: 0;
+        transform: scale(1);
     }
         .projects .project .wrap {
             display: block;

@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 
 class Projects extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            projects: ['0']
+        };
+    }
+    addProject(){
+        this.setState(Object.assign({}, this.state, {projects: this.state.projects.concat([this.state.projects.length])}));
+        if(this.state.projects.length >= 7) clearInterval(this.projectsStagger);
+    }
+    componentDidMount(){
+        this.projectsStagger = setInterval(() => this.addProject(), 50);
+    }
+    componentWillUnmount(){
+        clearInterval(this.projectsStagger);
+    }
     render() {
-        const projects = [1,2,3,4,5,6,7].map((number) =>
+        const projects = this.state.projects.map((number) =>
             <div className="project" key={number}>
                 <div className="wrap">
                     {number}
@@ -12,7 +29,14 @@ class Projects extends Component {
 
         return (
             <div className="projects">
-                {projects}
+                <CSSTransitionGroup
+                    transitionName="grid"
+                    transitionAppear={true}
+                    transitionAppearTimeout={0}
+                    transitionEnterTimeout={0}
+                    transitionLeaveTimeout={0}>
+                    {projects}
+                </CSSTransitionGroup>
             </div>
         );
     }
