@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 class Grid extends React.Component {
     constructor(props){
@@ -22,14 +22,6 @@ class Grid extends React.Component {
         clearInterval(this.animation);
     }
     render() {
-        const elements = this.state.elements.map((number) =>
-            <div className="project" key={number}>
-                <div className="wrap">
-                    {number}
-                </div>
-            </div>
-        );
-
         return (
             <div className="grid">
                 <CSSTransitionGroup
@@ -38,7 +30,7 @@ class Grid extends React.Component {
                     transitionAppearTimeout={0}
                     transitionEnterTimeout={0}
                     transitionLeaveTimeout={0}>
-                    {elements}
+                    {this.state.elements}
                 </CSSTransitionGroup>
             </div>
         );
