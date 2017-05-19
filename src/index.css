@@ -18,6 +18,9 @@ body {
 }
 .header {
     position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
     .header .intro {
         text-decoration: none;
@@ -58,7 +61,7 @@ body {
         }
     .header .breadcrumbs {
         position: absolute;
-        top: 70px;
+        top: 100px;
         left: 40px;
         transform: translateX(0);
         transition: top .4s, left .4s, transform .4s;
@@ -67,19 +70,29 @@ body {
         top: calc(100vh - 180px);
         left: 50vw;
         transform: translateX(-50%);
-        transition: top .4s, left .4s, transform .4s;
     }
-        .header .breadcrumbs a {
+    .header.projects-page .breadcrumbs {
+        top: 50vh;
+        left: 50vw;
+        transform: translateX(-100%);
+    }
+        .header .breadcrumbs > a {
             font-size: 40px;
+            line-height: 60px;
             font-weight: 700;
             text-decoration: none;
-            transition: font-size .4s;
+            top: 0;
+            transition: font-size .4s, top .4s;
         }
-        .header.home .breadcrumbs a {
+        .header.home .breadcrumbs > a {
             font-size: 20px;
             transition: font-size .4s;
         }
-        .header .breadcrumbs a:after {
+        .header:not(.home) .breadcrumbs > a {
+            top: -30px;
+        }
+        .header .breadcrumbs > a:after,
+        .header .breadcrumbs .project span:after {
             content: '';
             display: block;
             position: absolute;
@@ -89,101 +102,71 @@ body {
             width: 100%;
             background: #222222;
         }
+        .header .breadcrumbs .separator {
+            display: inline-block;
+            font-size: 20px;
+            line-height: 60px;
+            font-weight: 700;
+            padding: 0;
+            opacity: 0;
+            top: 0;
+            max-width: 0px;
+            transition: font-size .4s, opacity .4s, max-width .4s, padding .4s;
+        }
+        .header:not(.home) .breadcrumbs .separator {
+            top: -30px;
+            font-size: 40px;
+            opacity: 1;
+            max-width: 60px;
+            padding: 0 20px;
+        }
 
 main {
     top: 200px;
     padding: 30px;
 }
 .projects {
+    display: block;
+    position: absolute;
     overflow: hidden;
-    width: 100%;
+    width: 50vw;
+    height: 100vh;
+    top: -50vh;
+    left: 100%;
 }
+.header.project-page .projects {
+    pointer-events: none;
+}
+    .projects .swiper-container {
+        height: 100%;
+    }
+    .projects .swiper-slide {
+        height: auto;
+    }
     .projects .project {
-        float: left;
-        width: 25%;
-        padding: 10px;
-        opacity: 1;
-        cursor: pointer;
-        transform: scale(1);
-        transition: opacity .4s .4s, transform .4s .4s;
+        display: block;
+        font-size: 40px;
+        line-height: 60px;
+        font-weight: bold;
+        text-align: left;
+        text-transform: lowercase;
     }
-    .projects .project.grid-appear,
-    .projects .project.grid-appear,
-    .projects .project.grid-enter {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    .projects .project.grid-appear-active,
-    .projects .project.grid-enter-active {
-        opacity: 1;
-        transform: scale(1);
-    }
-        .projects .project span {
-            display: block;
+        .projects .project {
+            opacity: 0.5;
+            transition: opacity .3s;
         }
-        .projects .project .wrap {
-            display: block;
-            width: 100%;
-            padding-bottom: 100%;
-            overflow: hidden;
+        .header:not(.projects-page) .projects .project:not(.active) {
+            opacity: 0;
+        }
+        .projects .project.swiper-slide-active,
+        .projects .project.active {
             opacity: 1;
-            transition: opacity .4s;
         }
-        .projects:hover .project:not(:hover) .wrap {
-            opacity: .5;
-        }
-            .projects .project .image {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0,0,0,0.1);
-                background-size: cover;
+            .projects .project span:after {
+                opacity: 0;
+                transition: opacity .3s;
             }
-            .projects .project:nth-child(3n).active .image {
-                /*position: fixed;
-                width: calc(25vw - 35px);
-                height: calc(25vw - 35px);
-                left: calc(-50vw + 40px);
-                top: 10px;*/
+            .projects .project.swiper-slide-active span:after,
+            .projects .project.active span:after {
+                opacity: 1;
             }
-            .projects .project .infos {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                padding: 0 20px;
-                background: rgba(0,0,0,0.5);
-                background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%);
-                color: white;
-                text-align: left;
-                text-transform: lowercase;
-                height: 80px;
-                line-height: 100px;
-            }
-                .projects .project .infos .center {
-                    display: inline-block;
-                    vertical-align: middle;
-                    line-height: 16px;
-                    width: 100%;
-                }
-                    .projects .project .infos .center * {
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        white-space: nowrap;
-                    }
-                    .projects .project .infos .name {
-                        font-size: 16px;
-                        line-height: 20px;
-                        font-weight: 500;
-                    }
-                    .projects .project .infos .techs {
-                        font-size: 11px;
-                        font-weight: 300;
-                        max-height: 0;
-                        transition: max-height .4s;
-                    }
-                    .projects .project:hover .infos .techs {
-                        max-height: 20px;
-                    }

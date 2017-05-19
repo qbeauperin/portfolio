@@ -1,9 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+import Projects from '../pages/Projects';
 
-const Breadcrumbs = () => (
+const Breadcrumbs = (project) => (
     <div className="breadcrumbs">
         <Link to="/projects">projects</Link>
+        <div className="separator">></div>
+        <Route path="/projects" children={props => (
+            <Projects {...props}/>
+        )}/>
     </div>
 );
 
