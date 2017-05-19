@@ -97,18 +97,17 @@ main {
 .projects {
     overflow: hidden;
     width: 100%;
-    cursor: pointer;
 }
     .projects .project {
         float: left;
         width: 25%;
         padding: 10px;
         opacity: 1;
-        left: 0;
-        top: 0;
+        cursor: pointer;
         transform: scale(1);
         transition: opacity .4s .4s, transform .4s .4s;
     }
+    .projects .project.grid-appear,
     .projects .project.grid-appear,
     .projects .project.grid-enter {
         opacity: 0;
@@ -119,6 +118,9 @@ main {
         opacity: 1;
         transform: scale(1);
     }
+        .projects .project span {
+            display: block;
+        }
         .projects .project .wrap {
             display: block;
             width: 100%;
@@ -138,6 +140,13 @@ main {
                 height: 100%;
                 background-color: rgba(0,0,0,0.1);
                 background-size: cover;
+            }
+            .projects .project:nth-child(3n).active .image {
+                /*position: fixed;
+                width: calc(25vw - 35px);
+                height: calc(25vw - 35px);
+                left: calc(-50vw + 40px);
+                top: 10px;*/
             }
             .projects .project .infos {
                 position: absolute;
