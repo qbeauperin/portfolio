@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Breadcrumbs from './Breadcrumbs';
+import { Link, Route } from 'react-router-dom';
+import Projects from './Projects';
 
 class Header extends React.Component {
     render() {
@@ -19,7 +19,13 @@ class Header extends React.Component {
                     <Link to="/" className="name">quentin beauperin</Link>
                     <div className="status">front-end developer</div>
                 </div>
-                <Breadcrumbs/>
+                <div className="breadcrumbs">
+                    <Link to="/projects">projects</Link>
+                    <div className="separator">></div>
+                    <Route path="/projects" children={props => (
+                        <Projects {...props} projectsData={this.props.projects}/>
+                    )}/>
+                </div>
             </div>
         )
     }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import Swiper from 'react-id-swiper';
 import '../styles/swiper.css';
-import ProjectThumb from '../components/ProjectThumb';
+import ProjectThumb from './ProjectThumb';
 
 class Projects extends React.Component {
     constructor(props) {
@@ -13,20 +13,11 @@ class Projects extends React.Component {
     }
     render() {
         const currentProjectName = this.props.location.pathname.replace('/projects/', '');
-        const projectsData = [
-            {key: 1, name: 'Leon and Harper', 'uri': 'leon-and-harper', techs: 'magento, sass, grunt, bootstrap', 'img': 'https://unsplash.it/301/300/?random'},
-            {key: 2, name: 'Travel journal', 'uri': 'travel-journal', techs: 'react, html5, sass', 'img': 'https://unsplash.it/302/300/?random'},
-            {key: 3, name: 'Natalys', 'uri': 'natalys', techs: 'react, html5, sass', 'img': 'https://unsplash.it/300/301/?random'},
-            {key: 4, name: 'Maille Leo', 'uri': 'maille-leo', techs: 'react, html5, sass', 'img': 'https://unsplash.it/300/302/?random'},
-            {key: 5, name: 'Nisop', 'uri': 'nisop', techs: 'react, html5, sass', 'img': 'https://unsplash.it/301/301/?random'},
-            {key: 6, name: 'Oxbow SUP', 'uri': 'oxbow-sup', techs: 'react, html5, sass', 'img': 'https://unsplash.it/302/302/?random'},
-            {key: 7, name: 'Le Ptio', 'uri': 'le-ptio', techs: 'react, html5, sass', 'img': 'https://unsplash.it/301/302/?random'}
-        ];
-        const matchingProjects = projectsData.filter((project) => {
+        const matchingProjects = this.props.projectsData.filter((project) => {
             return project.uri.indexOf(currentProjectName) !== -1;
         });
-        const projectIndex = projectsData.indexOf(matchingProjects[0]);
-        const projects = projectsData.map((project) => (
+        const projectIndex = this.props.projectsData.indexOf(matchingProjects[0]);
+        const projects = this.props.projectsData.map((project) => (
             <ProjectThumb {...project}/>
         ));
         const swiperParams = {

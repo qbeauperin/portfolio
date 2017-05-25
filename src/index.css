@@ -21,6 +21,7 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    z-index: 1000;
 }
     .header .intro {
         text-decoration: none;
@@ -133,7 +134,9 @@ main {
     height: 100vh;
     top: -50vh;
     left: 100%;
+    opacity: 1;
 }
+.header.home .projects,
 .header.project-page .projects {
     pointer-events: none;
 }
@@ -150,12 +153,16 @@ main {
         font-weight: bold;
         text-align: left;
         text-transform: lowercase;
+        opacity: 0.5;
+        transition: opacity .3s .1s, font-size .4s;
     }
-        .projects .project {
-            opacity: 0.5;
-            transition: opacity .3s;
+        .header.home .projects .project {
+            opacity: 0;
+            font-size: 20px;
+            top: 30px;
+            transition: opacity .3s, font-size .4s;
         }
-        .header:not(.projects-page) .projects .project:not(.active) {
+        .header:not(.projects-page) .projects .project:not(.swiper-slide-active) {
             opacity: 0;
         }
         .projects .project.swiper-slide-active,
@@ -170,3 +177,17 @@ main {
             .projects .project.active span:after {
                 opacity: 1;
             }
+
+main .project {
+    opacity: 0;
+    transition: opacity .4s, top .4s;
+}
+    main .project.active.project-appear {
+        opacity: 0;
+        top: 40px;
+    }
+    main .project.active,
+    main .project.active.project-appear-active {
+        opacity: 1;
+        top: 0;
+    }
