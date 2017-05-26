@@ -7,9 +7,9 @@ class ProjectThumb extends React.Component {
             <Link
                 to={'/projects/' + this.props.uri}
                 key={this.props.key}
-                className="project swiper-slide"
+                className="project-thumb swiper-slide"
             >
-                <span>{this.props.name}</span>
+                <span className="underline">{this.props.name}</span>
             </Link>
         );
     }

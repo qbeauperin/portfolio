@@ -20,7 +20,7 @@ class Header extends React.Component {
                     <div className="status">front-end developer</div>
                 </div>
                 <div className="breadcrumbs">
-                    <Link to="/projects">projects</Link>
+                    <Link to="/projects" className="underline">projects</Link>
                     <div className="separator">></div>
                     <Route path="/projects" children={props => (
                         <Projects {...props} projectsData={this.props.projects}/>
