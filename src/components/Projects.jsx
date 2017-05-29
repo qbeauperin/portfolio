@@ -1,8 +1,9 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import Swiper from 'react-id-swiper';
-import '../styles/swiper.css';
 import ProjectThumb from './ProjectThumb';
+import './Projects.css';
+import '../styles/swiper.css';
 
 class Projects extends React.Component {
     constructor(props) {

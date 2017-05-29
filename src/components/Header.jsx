@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import Projects from './Projects';
+import './Header.css';
 
 class Header extends React.Component {
     render() {

@@ -1,6 +1,7 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
 import StatusImg from './StatusImg';
+import './Project.css';
 import '../styles/swiper.css';
 
 class Project extends React.Component {

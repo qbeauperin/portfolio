@@ -1,0 +1,20 @@
+.projects {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    width: 50vw;
+    height: 100vh;
+    top: -50vh;
+    left: 100%;
+    opacity: 1;
+}
+.header.home .projects,
+.header.project-page .projects {
+    pointer-events: none;
+}
+    .projects .swiper-container {
+        height: 100%;
+    }
+    .projects .swiper-slide {
+        height: auto;
+    }
