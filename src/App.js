@@ -84,13 +84,13 @@ class App extends Component {
                         <Header location={location} projects={this.projects}/>
                     )}/>
                     <main>
-                        <Route path="/projects/:project" children={({ match }) => {
+                        <Route path="/projects/:project" children={(router) => {
                             let project = null;
-                            if(!match) {
+                            if(router.location.pathname.indexOf('/projects') !== -1 && !router.match) {
                                 return <Redirect to="/projects"/>
                             }
                             const matchingProjects = this.projects.filter((project) => {
-                                return project.uri.indexOf(match.params.project) !== -1;
+                                return router.match && project.uri.indexOf(router.match.params.project) !== -1;
                             });
                             project = matchingProjects[0];
                             return (
