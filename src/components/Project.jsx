@@ -6,16 +6,19 @@ import '../styles/swiper.css';
 class Project extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            state: ''
-        }
+        this.state = { state: '' };
     }
     componentDidMount() {
-        setTimeout(() => {
+        this.timeout = setTimeout(() => {
             if(this.props.name) {
                 this.setState({ state: 'active' });
             }
         }, this.props.timeout || 200);
+    }
+    componentWillUnmount() {
+        if(this.timeout) {
+            clearTimeout(this.timeout);
+        }
     }
     render() {
         const techs = (!this.props.techs) ? '' : this.props.techs.map((tech, key) => (
