@@ -26,6 +26,7 @@ class Projects extends React.Component {
             centeredSlides: true,
             direction: 'vertical',
             slideToClickedSlide: true,
+            watchSlidesProgress: true,
             mousewheelControl: projectIndex < 0,
             keyboardControl: projectIndex < 0,
             initialSlide: (projectIndex >= 0) ? projectIndex : 0,
