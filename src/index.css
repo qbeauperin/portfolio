@@ -20,4 +20,10 @@ body {
 main {
     top: 200px;
     padding: 30px;
+    transition: top .2s;
+}
+@media (max-width: 1024px) {
+    main {
+        top: 140px;
+    }
 }

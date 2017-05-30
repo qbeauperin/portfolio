@@ -36,6 +36,7 @@
         width: 25%;
         text-align: left;
         text-transform: lowercase;
+        overflow: hidden;
     }
         .project .content dl {
             opacity: 0;
@@ -75,3 +76,25 @@
                     .project .content dd ul li:before {
                         content: '- ';
                     }
+@media (max-width: 1024px) {
+    .project {
+        display: block;
+    }
+        .project .image {
+            width: 100%;
+            padding-right: 0;
+            left: 40px;
+        }
+        .project .content {
+            width: 100%;
+            padding: 40px;
+        }
+            .project .content dl {
+                float: left;
+                width: 50%;
+                margin: 0;
+            }
+            .project .content dl.comments {
+                width: 100%;
+            }
+}

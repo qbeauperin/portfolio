@@ -43,6 +43,7 @@ class Project extends React.Component {
             lazyLoadingInPrevNext: true,
             watchSlidesVisibility: true,
             spaceBetween: 40,
+            autoplay: 4000,
             onInit: (swiper) => {
                 this.swiper = swiper
             }

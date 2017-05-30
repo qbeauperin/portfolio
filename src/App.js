@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Helmet} from "react-helmet";
-import './App.css';
 import Header from './components/Header';
 import Project from './components/Project';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
