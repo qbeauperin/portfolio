@@ -32,3 +32,16 @@
         .project-thumb.active span:after {
             opacity: 1;
         }
+
+@media (max-width: 1024px) {
+    .project-thumb {
+        line-height: 40px;
+    }
+}
+@media (max-width: 767px) {
+    .project-thumb {
+        font-size: 22px;
+        line-height: 22px;
+        padding: 10px 20px;
+    }
+}

@@ -18,3 +18,9 @@
     .projects .swiper-slide {
         height: auto;
     }
+
+@media (max-width: 767px) {
+    .projects {
+        width: calc(100vw - 125px);
+    }
+}

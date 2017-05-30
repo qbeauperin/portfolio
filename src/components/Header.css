@@ -13,7 +13,7 @@
     .header .intro {
         text-decoration: none;
         white-space: nowrap;
-        z-index: 1000;
+        z-index: 2000;
     }
         .header .name {
             position: absolute;
@@ -81,17 +81,6 @@
         .header:not(.home) .breadcrumbs > a {
             top: -30px;
         }
-        .underline:after {
-            content: '';
-            display: block;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 1px;
-            width: 100%;
-            background: #222222;
-            transition: height .4s;
-        }
         .header .breadcrumbs > a.underline:after,
         .header .breadcrumbs .project-thumb span.underline:after {
             height: 2px;
@@ -118,3 +107,78 @@
             max-width: 60px;
             padding: 0 20px;
         }
+@media (max-width: 1024px) {
+    .header .name {
+        top: 20px;
+        left: 20px;
+    }
+    .header.home .name {
+        top: calc(50vh - 60px);
+    }
+        .header .breadcrumbs > a {
+            left: 0;
+            margin-left: -20px;
+        }
+        .header .breadcrumbs .separator {
+            margin-left: -20px;
+            left: 0;
+        }
+}
+@media (max-width: 767px) {
+    .header.project-page {
+        height: 85px;
+    }
+    .header .name {
+        top: 0;
+        left: 0;
+        font-size: 15px;
+        line-height: 15px;
+        width: 100vw;
+        max-width: 100vw;
+        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+    }
+    .header.home .name {
+        padding: 0;
+        font-size: 30px;
+        line-height: 30px;
+        max-width: 242px;
+    }
+    .header.project-page .name {
+        padding-bottom: 0;
+    }
+    .header .status {
+        top: calc(50vh - 10px);
+        font-size: 20px;
+        line-height: 20px;
+        margin-top: 0;
+    }
+    .header .breadcrumbs {
+        top: 50px;
+        left: 20px;
+    }
+    .header.home .breadcrumbs {
+        top: calc(100vh - 80px);
+    }
+        .header.projects-page .breadcrumbs {
+            left: 20px;
+            transform: translateX(0);
+        }
+        .header .breadcrumbs > a {
+            font-size: 22px;
+            line-height: 22px;
+            left: 0;
+        }
+        .header:not(.home) .breadcrumbs > a {
+            top: -11px;
+        }
+            .header .breadcrumbs .separator {
+                font-size: 20px;
+            }
+            .header:not(.home) .breadcrumbs .separator {
+                top: -11px;
+                font-size: 20px;
+                line-height: 22px;
+                max-width: 25px;
+                padding: 0 7px;
+            }
+}

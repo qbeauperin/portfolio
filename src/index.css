@@ -18,12 +18,38 @@ body {
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1) !important;
 }
 main {
-    top: 200px;
-    padding: 30px;
+    top: 170px;
+    padding: 40px;
     transition: top .2s;
+}
+.underline:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background: #222222;
+    transition: height .4s;
 }
 @media (max-width: 1024px) {
     main {
         top: 140px;
+    }
+    a {
+        padding: 20px;
+        left: -20px;
+    }
+    a.underline:after {
+        width: calc(100% - 40px);
+        left: 20px;
+        bottom: 20px;
+    }
+}
+@media (max-width: 767px) {
+    main {
+        top: 65px;
+        padding: 20px;
     }
 }

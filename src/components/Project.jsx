@@ -33,8 +33,12 @@ class Project extends React.Component {
         ));
         const slides = (!this.props.imgs) ? '' : this.props.imgs.map((img, key) => (
             <div key={key} className="swiper-slide">
-                <div className="swiper-lazy-preloader"><span></span></div>
-                <StatusImg src={img} alt={this.props.name + ' ' + key}/>
+                <div className="slide">
+                    <div className="slide-wrapper">
+                        <div className="swiper-lazy-preloader"><span></span></div>
+                        <StatusImg src={img} alt={this.props.name + ' ' + key}/>
+                    </div>
+                </div>
             </div>
         ));
         const params = {
@@ -44,6 +48,11 @@ class Project extends React.Component {
             watchSlidesVisibility: true,
             spaceBetween: 40,
             autoplay: 4000,
+            breakpoints: {
+                1024: {
+                    spaceBetween: 0
+                }
+            },
             onInit: (swiper) => {
                 this.swiper = swiper
             }
@@ -53,7 +62,7 @@ class Project extends React.Component {
         );
         return (
             <div className={"project " + this.state.state}>
-                <div className="image">{imgs}</div>
+                <div className="images">{imgs}</div>
                 <div className="content">
                     <dl className="techs">
                         <dt className="underline">Techs</dt>
