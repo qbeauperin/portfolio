@@ -19,7 +19,7 @@ body {
 }
 main {
     top: 170px;
-    padding: 40px;
+    padding: 10px 40px;
     transition: top .2s;
 }
 .underline:after {
