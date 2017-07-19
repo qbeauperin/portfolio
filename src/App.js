@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Helmet} from "react-helmet";
 import Header from './components/Header';
 import Project from './components/Project';
+import ConsoleContact from './components/ConsoleContact';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 class App extends Component {
@@ -97,6 +98,7 @@ class App extends Component {
                             )
                         }}/>
                     </main>
+                    <ConsoleContact/>
                 </div>
             </Router>
         );
