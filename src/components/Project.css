@@ -109,6 +109,10 @@
             }
 }
 @media (max-width: 767px) {
+    .project .images {
+        width: calc(100% + 40px);
+        margin-left: -20px;
+    }
     .project .swiper-slide {
         padding: 0;
     }
