@@ -4,6 +4,20 @@ import Projects from './Projects';
 import './Header.css';
 
 class Header extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { mounted: false };
+    }
+    componentDidMount() {
+        this.timeout = setTimeout(() => {
+            this.setState({ mounted: true });
+        });
+    }
+    componentWillUnmount() {
+        if(this.timeout) {
+            clearTimeout(this.timeout);
+        }
+    }
     render() {
         let currentPage = 'header';
         const pathname = this.props.location.pathname;
@@ -14,11 +28,12 @@ class Header extends React.Component {
         }else if(pathname.indexOf('/projects/') !== -1){
             currentPage += ' project-page';
         }
+        let statusClass = 'status' + (this.state.mounted ? '' : ' mounting');
         return (
             <div className={currentPage}>
                 <div className="intro">
                     <Link to="/" className="name">quentin beauperin</Link>
-                    <div className="status">front-end developer</div>
+                    <div className={statusClass}>front-end developer</div>
                 </div>
                 <div className="breadcrumbs">
                     <Link to="/projects" className="underline">projects</Link>
