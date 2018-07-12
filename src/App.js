@@ -27,7 +27,7 @@ class App extends Component {
                         <Header location={location} projects={this.projects}/>
                     )}/>
                     <main>
-                        <Route path="/" render={() => <Helmet title="Quentin Beauperin"/> }/>
+                        <Route path="/" render={() => <Helmet title="Quentin Beauperin | Front-end developer"/> }/>
                         <Route path="/projects" render={() => <Helmet title="Projects | Quentin Beauperin"/> }/>
                         <Route path="/projects/:project" children={(router) => {
                             let project = null;
