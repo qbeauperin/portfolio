@@ -14,7 +14,7 @@ class App extends Component {
         return (
             <Router>
                 <div className="App">
-                    <Helmet title="Quentin Beauperin">
+                    <Helmet title="Quentin Beauperin | Front-end developer">
                         <meta name="viewport" content="width=device-width, initial-scale=1"/>
                         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
                         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
@@ -27,15 +27,20 @@ class App extends Component {
                         <Header location={location} projects={this.projects}/>
                     )}/>
                     <main>
+                        <Route path="/" render={() => <Helmet title="Quentin Beauperin"/> }/>
+                        <Route path="/projects" render={() => <Helmet title="Projects | Quentin Beauperin"/> }/>
                         <Route path="/projects/:project" children={(router) => {
                             let project = null;
-                            if(router.location.pathname.indexOf('/projects') !== -1 && !router.match) {
+                            if(router.location.pathname.indexOf('/projects/') !== -1 && !router.match) {
                                 return <Redirect to="/projects"/>
                             }
                             const matchingProjects = this.projects.filter((project) => {
                                 return router.match && project.uri.indexOf(router.match.params.project) !== -1;
                             });
                             project = matchingProjects[0];
+                            if (router.match && !project) {
+                                return <Redirect to="/projects"/>
+                            }
                             return (
                                 <Project {...project}/>
                             )

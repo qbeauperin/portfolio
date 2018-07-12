@@ -1,5 +1,6 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
+import {Helmet} from "react-helmet";
 import StatusImg from './StatusImg';
 import './Project.css';
 import '../styles/swiper.css';
@@ -65,6 +66,9 @@ class Project extends React.Component {
         );
         return (
             <div className={"project " + this.state.state}>
+                {this.props.name &&
+                    <Helmet title={this.props.name + ' | Quentin Beauperin'}/>
+                }
                 <div className="images">{imgs}</div>
                 <div className="content">
                     {techs.length > 0 &&
