@@ -47,7 +47,10 @@ class Project extends React.Component {
             lazyLoadingInPrevNext: true,
             watchSlidesVisibility: true,
             spaceBetween: 40,
-            autoplay: 4000,
+            keyboard: true,
+            autoplay: {
+                delay: 4000,
+            },
             breakpoints: {
                 1024: {
                     spaceBetween: 0
