@@ -67,24 +67,38 @@ class Project extends React.Component {
             <div className={"project " + this.state.state}>
                 <div className="images">{imgs}</div>
                 <div className="content">
-                    <dl className="techs">
-                        <dt className="underline">Techs</dt>
-                        <dd>
-                            <ul>{techs}</ul>
-                        </dd>
-                    </dl>
-                    <dl className="features">
-                        <dt className="underline">Features</dt>
-                        <dd>
-                            <ul>{features}</ul>
-                        </dd>
-                    </dl>
-                    <dl className="comments">
-                        <dt className="underline">Comments</dt>
-                        <dd>
-                            <ul>{comments}</ul>
-                        </dd>
-                    </dl>
+                    {techs.length > 0 &&
+                        <dl className="techs">
+                            <dt className="underline">Techs</dt>
+                            <dd>
+                                <ul>{techs}</ul>
+                            </dd>
+                        </dl>
+                    }
+                    {features.length > 0 &&
+                        <dl className="features">
+                            <dt className="underline">Features</dt>
+                            <dd>
+                                <ul>{features}</ul>
+                            </dd>
+                        </dl>
+                    }
+                    {comments.length > 0 &&
+                        <dl className="comments">
+                            <dt className="underline">Comments</dt>
+                            <dd>
+                                <ul>{comments}</ul>
+                            </dd>
+                        </dl>
+                    }
+                    {this.props.link &&
+                        <dl className="link">
+                            <dt className="underline">Link</dt>
+                            <dd>
+                                <ul><a href={this.props.link}>{this.props.link}</a></ul>
+                            </dd>
+                        </dl>
+                    }
                 </div>
             </div>
         );
