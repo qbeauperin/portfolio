@@ -33,10 +33,10 @@ class Project extends React.Component {
         ));
         const slides = (!this.props.imgs) ? '' : this.props.imgs.map((img, key) => (
             <div key={key} className="swiper-slide">
-                <div className="slide">
+                <div className={'slide ' + img.type}>
                     <div className="slide-wrapper">
                         <div className="swiper-lazy-preloader"><span></span></div>
-                        <StatusImg src={img} alt={this.props.name + ' ' + key}/>
+                        <StatusImg src={img.src} alt={this.props.name + ' ' + key}/>
                     </div>
                 </div>
             </div>
