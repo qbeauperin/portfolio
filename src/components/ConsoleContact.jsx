@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-class ConsoleContact extends React.Component {
-    componentDidMount() {
-        let basicStyle = 'background: #333; color: #333; font-size: 16px; line-height: 35px; padding: 15px 0;';
-        console.log("%c    You found the contact section, well done !     \n    So, now that you're here, here's my email :    \n    [myfirstname]@[domain]                         ", basicStyle);
-    }
-    render() {
-        return null;
-    }
+function ConsoleContact () {
+    useEffect(() => {
+        let basicStyle = 'font-size: 16px; line-height: 35px; padding: 15px 0;';
+        let lines = [
+            "You found the contact section, well done!",
+            "Now that you're here, here's my email:",
+            "[myfirstname]@[domain]"
+        ];
+        let result = "%c\n";
+        lines.forEach((line) => {
+            result += "     " + line + "\n"
+        });
+        console.log(result, basicStyle);
+    }, [])
+
+    return null;
 }
 
 export default ConsoleContact;

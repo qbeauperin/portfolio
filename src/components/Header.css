@@ -165,7 +165,7 @@
         left: 20px;
     }
     .header.home .breadcrumbs {
-        top: calc(100vh - 80px);
+        top: calc(100vh - 110px);
     }
         .header.projects-page .breadcrumbs {
             left: 20px;

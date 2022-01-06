@@ -18,6 +18,9 @@
     .projects .swiper-slide {
         height: auto;
     }
+    .projects .swiper-wrapper {
+        flex-direction: column;
+    }
 
 @media (max-width: 767px) {
     .projects {

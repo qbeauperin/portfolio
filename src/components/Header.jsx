@@ -1,50 +1,47 @@
-import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import Projects from './Projects';
 import './Header.css';
 
-class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { mounted: false };
-    }
-    componentDidMount() {
-        this.timeout = setTimeout(() => {
-            this.setState({ mounted: true });
-        });
-    }
-    componentWillUnmount() {
-        if(this.timeout) {
-            clearTimeout(this.timeout);
+function Header(props) {
+    const [mounted, setMounted] = useState(false);
+    let timeout = null;
+    let location = useLocation();
+    useEffect(() => {
+        timeout = setTimeout(() => setMounted(true));
+        return () => {
+            if(timeout) clearTimeout(timeout);
         }
-    }
-    render() {
-        let currentPage = 'header';
-        const pathname = this.props.location.pathname;
-        if(pathname === '/') {
-            currentPage += ' home';
-        }else if(pathname === '/projects') {
-            currentPage += ' projects-page';
-        }else if(pathname.indexOf('/projects/') !== -1){
-            currentPage += ' project-page';
-        }
-        let statusClass = 'status' + (this.state.mounted ? '' : ' mounting');
-        return (
-            <div className={currentPage}>
-                <div className="intro">
-                    <Link to="/" className="name">quentin beauperin</Link>
-                    <div className={statusClass}>front-end developer</div>
-                </div>
-                <div className="breadcrumbs">
-                    <Link to="/projects" className="underline">projects</Link>
-                    <div className="separator">></div>
-                    <Route path="/projects" children={props => (
-                        <Projects {...props} projectsData={this.props.projects}/>
-                    )}/>
-                </div>
+    }, [])
+    let currentPage = getPageClassname(location.pathname);
+    let statusClass = 'status' + (mounted ? '' : ' mounting');
+    return (
+        <div className={currentPage}>
+            <div className="intro">
+                <Link to="/" className="name">quentin beauperin</Link>
+                <div className={statusClass}>front-end developer</div>
             </div>
-        )
+            <div className="breadcrumbs">
+                <Link to="/projects" className="underline">projects</Link>
+                <div className="separator">></div>
+                <Routes>
+                    <Route path="*" element={ <Projects projectsData={props.projects} /> } />
+                </Routes>
+            </div>
+        </div>
+    )
+}
+
+function getPageClassname(pathname) {
+    let classname = 'header';
+    if(pathname === '/') {
+        classname += ' home';
+    }else if(pathname === '/projects') {
+        classname += ' projects-page';
+    }else if(pathname.indexOf('/projects/') !== -1){
+        classname += ' project-page';
     }
-};
+    return classname;
+}
 
 export default Header;
