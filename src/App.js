@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import {Helmet} from "react-helmet";
 import Header from './components/Header';
 import Project from './components/Project';
 import ConsoleContact from './components/ConsoleContact';
+import ReactGA from "react-ga4";
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useMatch } from 'react-router-dom';
 import data from './data.js';
 
 function App () {
     let projects = data.projects;
+    
+    useEffect(() => {
+        ReactGA.initialize("G-V3786M6321");
+    }, [])
+
     return (
         <Router>
             <div className="App">
