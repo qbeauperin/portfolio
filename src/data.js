@@ -2,6 +2,53 @@ const data = {
     'projects' : [
         {
             key: 1,
+            name: 'Dauntless roadmap',
+            uri: 'dauntless-roadmap',
+            techs: ['react', 'greensock', 'sass', 'gulp'],
+            features: [
+                'interactive "3d-like" interface', 
+                'seamless animations and transitions between pages', 
+                'search function',
+                'notification system for returning users',
+                'mobile friendly', 
+                'alternative accessible version'
+            ],
+            imgs: [
+                {type: 'desktop', src: '/images/dauntless-roadmap/dauntless-roadmap1.jpg'},
+                {type: 'desktop', src: '/images/dauntless-roadmap/dauntless-roadmap2.jpg'},
+                {type: 'desktop', src: '/images/dauntless-roadmap/dauntless-roadmap3.jpg'},
+                {type: 'desktop', src: '/images/dauntless-roadmap/dauntless-roadmap4.jpg'},
+                {type: 'desktop', src: '/images/dauntless-roadmap/dauntless-roadmap5.jpg'},
+                {type: 'desktop', src: '/images/dauntless-roadmap/dauntless-roadmap6.jpg'},
+                {type: 'mobile', src: '/images/dauntless-roadmap/dauntless-roadmap7.jpg'},
+                {type: 'mobile', src: '/images/dauntless-roadmap/dauntless-roadmap8.jpg'},
+                {type: 'mobile', src: '/images/dauntless-roadmap/dauntless-roadmap9.jpg'},
+                {type: 'mobile', src: '/images/dauntless-roadmap/dauntless-roadmap10.jpg'},
+                {type: 'mobile', src: '/images/dauntless-roadmap/dauntless-roadmap11.jpg'},
+            ]
+        },
+        {
+            key: 2,
+            name: 'Dauntless website',
+            uri: 'dauntless-website',
+            link: 'https://playdauntless.com/',
+            techs: ['jekyll', 'liquid', 'html5', 'sass', 'gulp'],
+            features: ['static site', 'regular content updates', 'millions of MAU'],
+            imgs: [
+                {type: 'desktop', src: '/images/dauntless/dauntless1.jpg'},
+                {type: 'desktop', src: '/images/dauntless/dauntless2.jpg'},
+                {type: 'desktop', src: '/images/dauntless/dauntless3.jpg'},
+                {type: 'desktop', src: '/images/dauntless/dauntless4.jpg'},
+                {type: 'desktop', src: '/images/dauntless/dauntless5.jpg'},
+                {type: 'mobile', src: '/images/dauntless/dauntless6.jpg'},
+                {type: 'mobile', src: '/images/dauntless/dauntless7.jpg'},
+                {type: 'mobile', src: '/images/dauntless/dauntless8.jpg'},
+                {type: 'mobile', src: '/images/dauntless/dauntless9.jpg'},
+                {type: 'mobile', src: '/images/dauntless/dauntless10.jpg'},
+            ]
+        },
+        {
+            key: 3,
             name: 'Leon and Harper',
             uri: 'leon-and-harper',
             link: 'https://www.leonandharper.com/en/',
@@ -20,7 +67,7 @@ const data = {
             ]
         },
         {
-            key: 2,
+            key: 4,
             name: 'Travel journal',
             uri: 'travel-journal',
             techs: ['react', 'html5', 'sass', 'wordpress'],
@@ -34,10 +81,9 @@ const data = {
             ]
         },
         {
-            key: 3,
+            key: 5,
             name: 'Natalys',
             uri: 'natalys',
-            link: 'http://www.natalys.com/',
             techs: ['magento', 'wordpress', 'fishpig', 'php', 'sass', 'grunt', 'bootstrap', 'gmaps'],
             features: ['e-commerce', 'store locator', 'mobile version'],
             imgs: [
@@ -50,7 +96,7 @@ const data = {
             ]
         },
         {
-            key: 4,
+            key: 6,
             name: 'Maille Leo',
             uri: 'maille-leo',
             techs: ['javascript', 'jquery', 'sass'],
@@ -68,10 +114,9 @@ const data = {
             ]
         },
         {
-            key: 5,
+            key: 7,
             name: 'Nisop',
             uri: 'nisop',
-            link: 'https://www.nisop.fr/',
             techs: ['wordpress', 'php', 'html5', 'sass'],
             features: ['courses catalog', 'online reservation', 'interesting design', 'cute little logo animation'],
             imgs: [
@@ -82,10 +127,9 @@ const data = {
             ]
         },
         {
-            key: 6,
+            key: 8,
             name: 'Oxbow SUP',
             uri: 'oxbow-sup',
-            link: 'http://www.oxbow-sup.com/ambassadeurs/',
             techs: ['wordpress', 'php', 'html5', 'sass'],
             features: ['differents object types presentation (ambassadors, collections, events, news)', 'user contribution module', 'newsletter'],
             imgs: [
@@ -96,10 +140,9 @@ const data = {
             ]
         },
         {
-            key: 7,
+            key: 9,
             name: 'Le Ptio',
             uri: 'le-ptio',
-            link: 'http://imf-le-ptio.fr/personnaliser',
             techs: ['php', 'cakephp', 'javascript', 'jquery', 'sass'],
             features: ['custom scooter configurator', '360° live preview', 'purchase order generation'],
             imgs: [
