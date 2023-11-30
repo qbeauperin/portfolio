@@ -1,10 +1,59 @@
 const data = {
     'projects' : [
         {
-            key: 1,
+            name: 'phxlabs accounts',
+            uri: 'phxlabs-accounts-management',
+            link: 'https://account.phxlabs.ca',
+            tech: ['react', 'nextjs', 'typescript', 'tailwind'],
+            features: [
+                'sso (oauth + openid)',
+                'fully powered by an external API',
+                'mobile friendly',
+                'light and dark mode',
+            ],
+            imgs: [
+                {type: 'desktop', src: '/images/phxlabs-accounts/phxlabs-accounts1.jpg'},
+                {type: 'desktop', src: '/images/phxlabs-accounts/phxlabs-accounts2.jpg'},
+                {type: 'desktop', src: '/images/phxlabs-accounts/phxlabs-accounts3.jpg'},
+                {type: 'desktop', src: '/images/phxlabs-accounts/phxlabs-accounts4.jpg'},
+                {type: 'desktop', src: '/images/phxlabs-accounts/phxlabs-accounts5.jpg'},
+                {type: 'desktop', src: '/images/phxlabs-accounts/phxlabs-accounts6.jpg'},
+                {type: 'mobile', src: '/images/phxlabs-accounts/phxlabs-accounts7.jpg'},
+                {type: 'mobile', src: '/images/phxlabs-accounts/phxlabs-accounts8.jpg'},
+                {type: 'mobile', src: '/images/phxlabs-accounts/phxlabs-accounts9.jpg'},
+                {type: 'mobile', src: '/images/phxlabs-accounts/phxlabs-accounts10.jpg'},
+            ]
+        },
+        {
+            name: 'Fae Farm',
+            uri: 'fae-farm',
+            link: 'https://faefarm.com',
+            tech: ['react', 'nextjs', 'typescript', 'payloadcms', 'graphql', 'styled-components'],
+            features: [
+                'static site',
+                'fully powered by the cms with a block system',
+                'region system with 10 languages',
+                'integration with several third-party tracking and analytics providers',
+                'main landing page for the multi-million dollar launch campaign',
+            ],
+            imgs: [
+                {type: 'desktop', src: '/images/fae-farm/fae-farm1.jpg'},
+                {type: 'desktop', src: '/images/fae-farm/fae-farm2.jpg'},
+                {type: 'desktop', src: '/images/fae-farm/fae-farm3.jpg'},
+                {type: 'desktop', src: '/images/fae-farm/fae-farm4.jpg'},
+                {type: 'desktop', src: '/images/fae-farm/fae-farm5.jpg'},
+                {type: 'mobile', src: '/images/fae-farm/fae-farm6.jpg'},
+                {type: 'mobile', src: '/images/fae-farm/fae-farm7.jpg'},
+                {type: 'mobile', src: '/images/fae-farm/fae-farm8.jpg'},
+                {type: 'mobile', src: '/images/fae-farm/fae-farm9.jpg'},
+                {type: 'mobile', src: '/images/fae-farm/fae-farm10.jpg'},
+                {type: 'desktop', src: '/images/fae-farm/fae-farm11.jpg'},
+            ]
+        },
+        {
             name: 'Dauntless roadmap',
             uri: 'dauntless-roadmap',
-            techs: ['react', 'greensock', 'sass', 'gulp'],
+            tech: ['react', 'greensock', 'sass', 'gulp'],
             features: [
                 'interactive "3d-like" interface', 
                 'seamless animations and transitions between pages', 
@@ -28,11 +77,10 @@ const data = {
             ]
         },
         {
-            key: 2,
-            name: 'Dauntless website',
-            uri: 'dauntless-website',
+            name: 'Dauntless',
+            uri: 'dauntless-site',
             link: 'https://playdauntless.com/',
-            techs: ['jekyll', 'liquid', 'html5', 'sass', 'gulp'],
+            tech: ['jekyll', 'liquid', 'html5', 'sass', 'gulp'],
             features: ['static site', 'regular content updates', 'millions of MAU'],
             imgs: [
                 {type: 'desktop', src: '/images/dauntless/dauntless1.jpg'},
@@ -48,11 +96,10 @@ const data = {
             ]
         },
         {
-            key: 3,
             name: 'Leon and Harper',
             uri: 'leon-and-harper',
             link: 'https://www.leonandharper.com/en/',
-            techs: ['magento', 'wordpress', 'fishpig', 'php', 'sass', 'grunt', 'bootstrap', 'gmaps'],
+            tech: ['magento', 'wordpress', 'fishpig', 'php', 'sass', 'grunt', 'bootstrap', 'gmaps'],
             features: ['e-commerce', 'store locator', 'mobile version'],
             imgs: [
                 {type: 'desktop', src: '/images/leonandharper/leonandharper1.jpg'},
@@ -67,10 +114,9 @@ const data = {
             ]
         },
         {
-            key: 4,
             name: 'Travel journal',
             uri: 'travel-journal',
-            techs: ['react', 'html5', 'sass', 'wordpress'],
+            tech: ['react', 'html5', 'sass', 'wordpress'],
             features: ['wordpress based API', 'dynamic google map with markers and polylines', 'responsive and multi-platform slider as main navigation', 'photo viewer', 'responsive'],
             comments: ['Personal project to illustrate my cross-Canada road-trip'],
             imgs: [
@@ -81,10 +127,9 @@ const data = {
             ]
         },
         {
-            key: 5,
             name: 'Natalys',
             uri: 'natalys',
-            techs: ['magento', 'wordpress', 'fishpig', 'php', 'sass', 'grunt', 'bootstrap', 'gmaps'],
+            tech: ['magento', 'wordpress', 'fishpig', 'php', 'sass', 'grunt', 'bootstrap', 'gmaps'],
             features: ['e-commerce', 'store locator', 'mobile version'],
             imgs: [
                 {type: 'desktop', src: '/images/natalys/natalys1.jpg'},
@@ -96,10 +141,9 @@ const data = {
             ]
         },
         {
-            key: 6,
             name: 'Maille Leo',
             uri: 'maille-leo',
-            techs: ['javascript', 'jquery', 'sass'],
+            tech: ['javascript', 'jquery', 'sass'],
             features: ['custom t-shirt configurator', 'responsive'],
             comments: [
                 'the configurator allowed the user to create a custom t-shirt with the choice of sleeve type, collar type, color but also hundreds of designs to choose from and place wherever (front, back, sleeve and/or stack them)',
@@ -114,10 +158,9 @@ const data = {
             ]
         },
         {
-            key: 7,
             name: 'Nisop',
             uri: 'nisop',
-            techs: ['wordpress', 'php', 'html5', 'sass'],
+            tech: ['wordpress', 'php', 'html5', 'sass'],
             features: ['courses catalog', 'online reservation', 'interesting design', 'cute little logo animation'],
             imgs: [
                 {type: 'desktop', src: '/images/nisop/nisop1.jpg'},
@@ -127,10 +170,9 @@ const data = {
             ]
         },
         {
-            key: 8,
             name: 'Oxbow SUP',
             uri: 'oxbow-sup',
-            techs: ['wordpress', 'php', 'html5', 'sass'],
+            tech: ['wordpress', 'php', 'html5', 'sass'],
             features: ['differents object types presentation (ambassadors, collections, events, news)', 'user contribution module', 'newsletter'],
             imgs: [
                 {type: 'desktop', src: '/images/oxbowsup/oxbowsup1.jpg'},
@@ -140,10 +182,9 @@ const data = {
             ]
         },
         {
-            key: 9,
             name: 'Le Ptio',
             uri: 'le-ptio',
-            techs: ['php', 'cakephp', 'javascript', 'jquery', 'sass'],
+            tech: ['php', 'cakephp', 'javascript', 'jquery', 'sass'],
             features: ['custom scooter configurator', '360° live preview', 'purchase order generation'],
             imgs: [
                 {type: 'desktop', src: '/images/leptio/leptio1.jpg'},

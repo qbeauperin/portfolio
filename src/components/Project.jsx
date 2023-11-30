@@ -23,7 +23,7 @@ class Project extends React.Component {
         }
     }
     render() {
-        const techs = (!this.props.techs) ? '' : this.props.techs.map((tech, key) => (
+        const tech = (!this.props.tech) ? '' : this.props.tech.map((tech, key) => (
             <li key={key}>{tech}</li>
         ));
         const features = (!this.props.features) ? '' : this.props.features.map((feature, key) => (
@@ -71,11 +71,11 @@ class Project extends React.Component {
                 }
                 <div className="images">{imgs}</div>
                 <div className="content">
-                    {techs.length > 0 &&
-                        <dl className="techs">
-                            <dt className="underline">Techs</dt>
+                    {tech.length > 0 &&
+                        <dl className="tech">
+                            <dt className="underline">Tech</dt>
                             <dd>
-                                <ul>{techs}</ul>
+                                <ul>{tech}</ul>
                             </dd>
                         </dl>
                     }

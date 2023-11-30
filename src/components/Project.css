@@ -132,7 +132,7 @@
             width: 100%;
             margin: 20px 0;
         }
-        .project.active .content dl.techs dd ul {
+        .project.active .content dl.tech dd ul {
             columns: 2;
         }
 }

@@ -13,8 +13,8 @@ function Projects (props) {
         return project.uri.indexOf(currentProjectName) !== -1;
     });
     const projectIndex = props.projectsData.indexOf(matchingProjects[0]);
-    const projects = props.projectsData.map((project) => (
-        <ProjectThumb {...project}/>
+    const projects = props.projectsData.map((project, index) => (
+        <ProjectThumb key={index} {...project}/>
     ));
     const swiperParams = {
         slidesPerView: 'auto',
