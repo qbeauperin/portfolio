@@ -25,6 +25,7 @@ function App () {
                     <link rel="manifest" href="/manifest.json"/>
                     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#222222"/>
                     <meta name="theme-color" content="#ffffff"/>
+                    <meta name="description" content="Front-end developer, open to Vancouver-based or remote work oportunities." />
                 </Helmet>
                 <Routes>
                     <Route path="*" element={<Header projects={projects}/> } />
