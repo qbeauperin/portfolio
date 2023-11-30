@@ -27,7 +27,7 @@
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    background: rgba(0,0,0,.05);
+                    background: rgba(var(--text-color-rgb),.1);
                 }
                 .project img {
                     display: block;
@@ -91,6 +91,11 @@
                     .project .content dd ul li:before {
                         content: '- ';
                     }
+.swiper-lazy-preloader span, 
+.swiper-lazy-preloader:before, 
+.swiper-lazy-preloader:after {
+    background: var(--text-color);
+}
 @media (max-width: 1024px) {
     .project {
         display: block;
