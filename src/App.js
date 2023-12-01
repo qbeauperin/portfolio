@@ -24,6 +24,9 @@ function App () {
                     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
                     <link rel="manifest" href="/manifest.json"/>
                     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#222222"/>
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
                     <meta name="theme-color" content="#ffffff"/>
                     <meta name="description" content="Front-end developer, open to Vancouver-based or remote work oportunities." />
                 </Helmet>
