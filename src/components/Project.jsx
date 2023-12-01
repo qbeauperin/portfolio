@@ -47,14 +47,14 @@ class Project extends React.Component {
             preloadImages: false,
             lazyLoadingInPrevNext: true,
             watchSlidesVisibility: true,
-            spaceBetween: 40,
+            spaceBetween: 0,
             keyboard: true,
             autoplay: {
                 delay: 4000,
             },
             breakpoints: {
                 1024: {
-                    spaceBetween: 0
+                    spaceBetween: 40
                 }
             },
             onInit: (swiper) => {
