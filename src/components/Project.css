@@ -18,8 +18,7 @@
         }
             .project .slide {
                 width: 100%;
-                /*padding-bottom: 66.66%;*/
-                padding-bottom: 55%;
+                padding-bottom: 56.3%;
             }
                 .project .slide .slide-wrapper {
                     position: absolute;
@@ -64,6 +63,9 @@
         }
         .project .content dl:nth-child(3) {
             transition: opacity .4s .4s, left .4s .4s;
+        }
+        .project .content dl:nth-child(4) {
+            transition: opacity .4s .5s, left .4s .5s;
         }
         .project.active .content dl {
             opacity: 1;
