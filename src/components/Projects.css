@@ -7,6 +7,7 @@
     top: -50vh;
     left: 100%;
     opacity: 1;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 75%, rgba(0,0,0,0) 100%);
 }
 .header.home .projects,
 .header.project-page .projects {
