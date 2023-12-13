@@ -1,7 +1,8 @@
-import React, { Component, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {Helmet} from "react-helmet";
 import Header from './components/Header';
 import Project from './components/Project';
+import ProjectNav from './components/ProjectNav.jsx';
 import ConsoleContact from './components/ConsoleContact';
 import ReactGA from "react-ga4";
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useMatch } from 'react-router-dom';
@@ -47,22 +48,30 @@ function App () {
 }
 
 function ContentWrapper(props){
-    let project = null;
-    let match = useMatch({
+    const { projects } = props;
+    const match = useMatch({
         path: '/projects/:project'
     });
-    let location = useLocation();
+    const location = useLocation();
     if(location.pathname.indexOf('/projects/') !== -1 && !match) {
         return <Navigate to="/projects"/>
     }
-    const matchingProjects = props.projects.filter((project) => {
+    const matchingProjects = projects.filter((project) => {
         return match && project.uri.indexOf(match.params.project) !== -1;
     });
-    project = matchingProjects[0];
+    const project = matchingProjects?.length ? matchingProjects[0] : null;
+    const matchingProjectIndex = projects.indexOf(project);
+    const previousProject = projects[matchingProjectIndex - 1 ];
+    const nextProject = projects[matchingProjectIndex + 1];
     if (match && !project) {
         return <Navigate to="/projects"/>
     }
-    return <Project {...project}/>
+    return (
+        <>
+            <Project {...project}/>
+            <ProjectNav previous={previousProject} next={nextProject}/>
+        </>
+    )
 }
 
 export default App;

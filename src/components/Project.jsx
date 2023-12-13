@@ -9,6 +9,16 @@ class Project extends React.Component {
     constructor(props) {
         super(props);
         this.state = { state: '' };
+        this.timeoutRef = React.createRef();
+    }
+    componentDidUpdate(prevProps) {
+        if(prevProps.name != this.props.name) {
+            this.setState({ state: '' });
+            if(this.timeoutRef.current) clearTimeout(this.timeoutRef.current);
+            this.timeoutRef.current = setTimeout(() => {
+                this.setState({ state: 'active' });
+            }, this.props.timeout || 200)
+        }
     }
     componentDidMount() {
         this.timeout = setTimeout(() => {

@@ -6,11 +6,12 @@
         padding-right: 40px;
         opacity: 0;
         left: 40px;
-        transition: opacity .4s, left .4s;
+        transition: opacity 0s, left 0s;
     }
     .project.active .images {
         opacity: 1;
         left: 0;
+        transition: opacity .2s, left .2s;
     }
         .project .swiper-slide {
             padding: 0;
@@ -36,7 +37,7 @@
                     top: 0;
                     left: 0;
                     opacity: 0;
-                    transition: opacity .4s;
+                    transition: opacity .2s;
                 }
                 .project .slide.mobile img {
                     height: 100%;
@@ -52,24 +53,26 @@
         text-align: left;
         text-transform: lowercase;
         overflow: hidden;
+        padding-bottom: 100px;
     }
         .project .content dl {
             opacity: 0;
             left: 40px;
-            transition: opacity .4s .2s, left .4s .2s;
-        }
-        .project .content dl:nth-child(2) {
-            transition: opacity .4s .3s, left .4s .3s;
-        }
-        .project .content dl:nth-child(3) {
-            transition: opacity .4s .4s, left .4s .4s;
-        }
-        .project .content dl:nth-child(4) {
-            transition: opacity .4s .5s, left .4s .5s;
+            transition: opacity 0s 0s, left 0s 0s;
         }
         .project.active .content dl {
             opacity: 1;
             left: 0;
+            transition: opacity .2s .2s, left .2s .2s;
+        }
+        .project.active .content dl:nth-child(2) {
+            transition: opacity .2s .3s, left .2s .3s;
+        }
+        .project.active .content dl:nth-child(3) {
+            transition: opacity .2s .4s, left .2s .4s;
+        }
+        .project.active .content dl:nth-child(4) {
+            transition: opacity .2s .5s, left .2s .5s;
         }
             .project .content dt {
                 display: inline-block;
@@ -112,7 +115,7 @@
             }
         .project .content {
             width: 100%;
-            padding: 40px;
+            padding: 40px 40px 100px;
         }
             .project .content dl {
                 float: left;
@@ -132,7 +135,7 @@
         padding: 0;
     }
     .project .content {
-        padding: 0;
+        padding: 0 0 100px;
     }
         .project .content dl {
             float: none;

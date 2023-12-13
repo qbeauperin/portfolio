@@ -35,6 +35,7 @@ main {
     top: 170px;
     padding: 10px 40px;
     transition: top .2s;
+    overflow: hidden;
 }
 .underline:after {
     content: '';
@@ -46,6 +47,12 @@ main {
     width: 100%;
     background: var(--text-color);
     transition: height .4s;
+}
+a {
+    transition: opacity .2s;
+}
+a:hover {
+    opacity: .6;
 }
 @media (max-width: 1024px) {
     main {

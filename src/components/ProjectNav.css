@@ -1,0 +1,50 @@
+.project-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    padding-top: 20px;
+    background: linear-gradient(to bottom, rgba(var(--background-color-rgb), 0) 0, rgba(var(--background-color-rgb), 1) 20px);
+}
+.project-nav a {
+    display: block;
+    float: left;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: lowercase;
+    padding: 20px;
+    transition: opacity .2s;
+    max-width: 50%;
+}
+    .project-nav a.project-nav__next{
+        text-align: right;
+        float: right;
+    }
+    .project-nav a:hover,
+    .project-nav a:focus {
+        opacity: .6;
+    }
+        .project-nav a span {
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .project-nav a .label {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 14px;
+            margin-bottom: 5px;
+        }
+
+@media (max-width: 767px) {
+    .project-nav {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+        .project-nav a {
+            left: auto;
+        }
+}

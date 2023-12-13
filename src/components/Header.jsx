@@ -23,7 +23,7 @@ function Header(props) {
             </div>
             <div className="breadcrumbs">
                 <Link to="/projects" className="underline">projects</Link>
-                <div className="separator">></div>
+                <div className="separator">{'>'}</div>
                 <Routes>
                     <Route path="*" element={ <Projects projectsData={props.projects} /> } />
                 </Routes>
