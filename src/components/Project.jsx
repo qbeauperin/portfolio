@@ -10,13 +10,16 @@ class Project extends React.Component {
         super(props);
         this.state = { state: '' };
         this.timeoutRef = React.createRef();
+        this.swiperRef = React.createRef();
     }
     componentDidUpdate(prevProps) {
         if(prevProps.name != this.props.name) {
             this.setState({ state: '' });
+            if(this.swiperRef.current) this.swiperRef.current.swiper.slideTo(0, 0);
             if(this.timeoutRef.current) clearTimeout(this.timeoutRef.current);
             this.timeoutRef.current = setTimeout(() => {
                 this.setState({ state: 'active' });
+                if(this.swiperRef.current) this.swiperRef.current.swiper.update();
             }, this.props.timeout || 200)
         }
     }
@@ -67,12 +70,9 @@ class Project extends React.Component {
                     spaceBetween: 40
                 }
             },
-            onInit: (swiper) => {
-                this.swiper = swiper
-            }
         };
         const imgs = (!this.props.imgs) ? '' : (
-            <Swiper {...params}>{slides}</Swiper>
+            <Swiper {...params} ref={this.swiperRef}>{slides}</Swiper>
         );
         return (
             <div className={"project " + this.state.state}>
