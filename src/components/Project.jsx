@@ -16,10 +16,10 @@ class Project extends React.Component {
         if(prevProps.name != this.props.name) {
             this.setState({ state: '' });
             if(this.swiperRef.current) this.swiperRef.current.swiper.slideTo(0, 0);
+            if(this.swiperRef.current) this.swiperRef.current.swiper.update();
             if(this.timeoutRef.current) clearTimeout(this.timeoutRef.current);
             this.timeoutRef.current = setTimeout(() => {
                 this.setState({ state: 'active' });
-                if(this.swiperRef.current) this.swiperRef.current.swiper.update();
             }, this.props.timeout || 200)
         }
     }
