@@ -109,7 +109,7 @@ class Project extends React.Component {
                         <dl className="link">
                             <dt className="underline">Link</dt>
                             <dd>
-                                <a href={this.props.link}>{this.props.link}</a>
+                                <a href={this.props.link} target="_blank">{this.props.link}</a>
                             </dd>
                         </dl>
                     }
